@@ -44,7 +44,33 @@
                         "fetch_upstream_icon": true
                     },
                     "style": "powerline",
-                    "template": " {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}\uf046 {{ .Staging.String }}</>{{ end }}",
+                    "template": "{{ .HEAD }}",
+                    "type": "git"
+                },
+                {
+                    "background": "#aa2d38",
+                    "foreground": "#FFFFFF",
+                    "powerline_symbol": "\ue0b0",
+                    "properties": {
+                        "branch_icon": "\ue725 ",
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true
+                    },
+                    "style": "powerline",
+                    "template": "{{ if .Working.Changed }}{{ if gt .Working.Untracked 0 }}U{{ .Working.Untracked }}{{ end }}{{ if gt .Working.Modified 0 }}M{{ .Working.Modified }}{{ end }}{{ if gt .Working.Added 0 }}A{{ .Working.Added }}{{ end }}{{ if gt .Working.Deleted 0 }}D{{ .Working.Deleted }}{{ end }}{{ if gt .Working.Unmerged 0 }}C{{ .Working.Unmerged }}{{ end }}</>{{ end }}",
+                    "type": "git"
+                },
+                {
+                    "background": "#7c9f63",
+                    "foreground": "#FFFFFF",
+                    "powerline_symbol": "\ue0b0",
+                    "properties": {
+                        "branch_icon": "\ue725 ",
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true
+                    },
+                    "style": "powerline",
+                    "template": "{{ if .Staging.Changed }}{{ if gt .Staging.Untracked 0 }}U{{ .Staging.Untracked }}{{ end }}{{ if gt .Staging.Modified 0 }}M{{ .Staging.Modified }}{{ end }}{{ if gt .Staging.Added 0 }}A{{ .Staging.Added }}{{ end }}{{ if gt .Staging.Deleted 0 }}D{{ .Staging.Deleted }}{{ end }}{{ if gt .Staging.Unmerged 0 }}C{{ .Staging.Unmerged }}{{ end }}</>{{ end }}",
                     "type": "git"
                 }
             ],

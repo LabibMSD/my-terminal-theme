@@ -29,7 +29,7 @@
 						"fetch_status": true,
 						"fetch_upstream_icon": true
 					},
-					"template": " (<#F14E32>{{ .HEAD }}</>)"
+					"template": " (<#F14E32>{{ .HEAD }}</>{{ if .Working.Changed }} ✗{{ end }}{{ if gt .Working.Untracked 0 }}U<#F14E32>{{ .Working.Untracked }}</>{{ end }}{{ if gt .Working.Modified 0 }}M<#F14E32>{{ .Working.Modified }}</>{{ end }}{{ if gt .Working.Added 0 }}A<#F14E32>{{ .Working.Added }}</>{{ end }}{{ if gt .Working.Deleted 0 }}D<#F14E32>{{ .Working.Deleted }}</>{{ end }}{{ if gt .Working.Unmerged 0 }}C<#F14E32>{{ .Working.Unmerged }}</>{{ end }}{{ if .Staging.Changed }} ✓{{ end }}{{ if gt .Staging.Untracked 0 }}U<#F14E32>{{ .Staging.Untracked }}</>{{ end }}{{ if gt .Staging.Modified 0 }}M<#F14E32>{{ .Staging.Modified }}</>{{ end }}{{ if gt .Staging.Added 0 }}A<#F14E32>{{ .Staging.Added }}</>{{ end }}{{ if gt .Staging.Deleted 0 }}D<#F14E32>{{ .Staging.Deleted }}</>{{ end }}{{ if gt .Staging.Unmerged 0 }}C<#F14E32>{{ .Staging.Unmerged }}</>{{ end }}) "
 				}							
 			],
 			"type": "prompt"
