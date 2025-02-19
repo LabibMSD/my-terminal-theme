@@ -16,7 +16,7 @@
 					"foreground": "#32CD32",
 					"properties": {
 						"style": "agnoster_full",
-						"home_icon": "home",
+						"home_icon": "Home",
 						"folder_separator_icon": " </><white>\u276f</> "
 					},
 					"template": "{{ .Path }}"
@@ -29,7 +29,7 @@
 						"fetch_status": true,
 						"fetch_upstream_icon": true
 					},
-					"template": " (<#F14E32>{{ .HEAD }}</>{{ if gt .Working.Modified 0 }} <#ffffff>M</><#F14E32>{{ .Working.Modified }}</>{{ end }}{{ if gt .Staging.Added 0 }} <#ffffff>A</><#F14E32>{{ .Staging.Added }}</>{{ end }}{{ if gt .Staging.Deleted 0 }} <#ffffff>D</><#F14E32>{{ .Staging.Deleted }}</>{{ end }}{{ if gt .Staging.Unmerged 0 }} <#ffffff>U</><#F14E32>{{ .Staging.Unmerged }}</>{{ end }}{{ if gt .Working.Untracked 0 }} <#ffffff>?</><#F14E32>{{ .Working.Untracked }}</>{{ end }}{{ if gt .Ahead 0 }} ⬆<#F14E32>{{ .Ahead }}</>{{ end }}{{ if gt .Behind 0 }} ⬇<#F14E32>{{ .Behind }}</>{{ end }})"
+					"template": " (<#F14E32>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }})"
 				}							
 			],
 			"type": "prompt"
