@@ -29,7 +29,7 @@
 						"fetch_status": true,
 						"fetch_upstream_icon": true
 					},
-					"template": " (<#F14E32>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }})"
+					"template": " (<#F14E32>{{ .HEAD }}</>)"
 				}							
 			],
 			"type": "prompt"
